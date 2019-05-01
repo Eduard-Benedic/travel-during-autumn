@@ -1,0 +1,71 @@
+.testimonial {
+  width: 75%;
+  margin: 0 auto;
+  border: 0.3rem solid $secondary-color;
+
+  box-shadow: 0 3rem 6rem rgba($black-color, 0.1);
+  background-color: $white-color;
+  border-radius: 3px;
+  padding: 4rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+  cursor: default;
+
+  @include respond(atSmall) {
+    width: 100%;
+    padding: 2rem;
+    transform: skewX(0);
+  }
+  &__img {
+    height: 100%;
+    transition: transform 0.3s;
+  }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    shape-outside: circle(48% at 50% 50%);
+    -webkit-shape-outside: circle(48% at 50% 50%);
+    clip-path: ellipse(130px 140px at 10% 20%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+
+    @include respond(atSmall) {
+      height: 10rem;
+      clip-path: circle();
+      transform: translateX(-1.5rem) skewX(0);
+    }
+  }
+
+  &__text {
+    transform: skewX(12deg);
+    @include respond(atSmall) {
+      transform: skewX(0);
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    color: $white-color;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    transition: all 0.3s ease;
+    @include contentCenter;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    visibility: visible;
+    font-size: 1.7rem;
+  }
+
+  &:hover &__shape &__img {
+    filter: blur(1px);
+    transform: scale(0.95);
+  }
+}

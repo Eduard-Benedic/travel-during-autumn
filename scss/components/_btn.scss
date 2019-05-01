@@ -1,0 +1,39 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    display: inline-block;
+    color: $white-color;
+    background-color: $secondary-color;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 1rem 2rem $grey-color;
+    transition: transform 0.3s;
+
+    //Changes for the button el
+
+    border: none;
+    cursor: pointer;
+  }
+  &:hover {
+    background-color: $primary-color;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    box-shadow: 0 0.8rem 1.5rem $grey-color;
+    transform: scale(1);
+  }
+  &--white {
+    background-color: $white-dark-color;
+    position: absolute;
+    bottom: 2rem;
+    right: 35%;
+    &:hover {
+      background-color: red;
+    }
+  }
+}

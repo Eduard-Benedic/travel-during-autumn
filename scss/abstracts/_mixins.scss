@@ -1,0 +1,42 @@
+@mixin contentCenter {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin backgroundToText {
+  background-image: linear-gradient(to right, $primary-color, $secondary-color);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == atSmall {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint == atMedium {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+  @if $breakpoint == atLarge {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == atXLarge {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}

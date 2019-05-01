@@ -1,0 +1,17 @@
+{
+  "name": "improved",
+  "version": "1.0.0",
+  "description": "Nature-fictional-website",
+  "main": "index.js",
+  "homepage": "https://github.com/Eduard-Benedic/travel-during-autumn.git",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Eduard Benedic",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^2.0.1",
+    "node-sass": "^4.11.0"
+  }
+}

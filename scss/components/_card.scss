@@ -1,0 +1,145 @@
+.card {
+  height: 50rem;
+  position: relative;
+  perspective: 80rem;
+  -moz-perspective: 80rem;
+
+  &__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50rem;
+    color: $white-color;
+    font-size: 5rem;
+    backface-visibility: hidden;
+    perspective: 150rem;
+    transition: all 1s;
+    box-shadow: 0.4rem 0.6rem 2rem $black-color;
+
+    &--front {
+      background-color: $white-color;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      &-1 {
+        background-image: linear-gradient(
+          to bottom,
+          rgba($green-color, 0.8),
+          rgba($green-color, 0.2)
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to bottom,
+          rgba($secondary-color, 0.8),
+          rgba($secondary-color, 0.2)
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to bottom,
+          rgba($brown-color, 0.8),
+          rgba($brown-color, 0.2)
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front,
+  &:active &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back,
+  &:active &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__photo {
+    height: 18rem;
+    width: 100%;
+    background-size: cover;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(
+          to right,
+          rgba($primary-color, 0.5),
+          rgba($secondary-color, 0.6)
+        ),
+        url(../img/cards-img/card1.jpg);
+    }
+
+    &--2 {
+      background-image: url(../img/cards-img/card2.jpg);
+    }
+
+    &--3 {
+      background-image: url(../img/cards-img/card3.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: 3rem;
+    font-weight: 300;
+    text-align: center;
+    position: absolute;
+    top: 6rem;
+    right: 1.7rem;
+    width: 45%;
+    @include respond(atMedium) {
+      font-size: 2rem;
+    }
+
+    &-span {
+      padding: 0.6rem 1.3rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    &-span--1 {
+      background-image: linear-gradient(
+        to right,
+        rgba($primary-color, 0.5),
+        rgba($secondary-color, 0.5)
+      );
+    }
+  }
+
+  &__details {
+    color: $black-color;
+
+    ul {
+      list-style: none;
+      width: 60%;
+      margin: 0 auto;
+      text-align: center;
+
+      li {
+        font-size: $default-font-size;
+        font-weight: 400;
+
+        &:not(:last-child) {
+          margin-bottom: 4rem;
+          @include respond(atMedium) {
+            margin-bottom: 2rem;
+          }
+
+          @include respond(atSmall) {
+            margin-bottom: 3.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__price {
+    text-align: center;
+    position: absolute;
+    @include contentCenter;
+  }
+}

@@ -1,0 +1,10 @@
+.footer {
+  margin-top: 2rem;
+  padding: 5rem;
+  font-size: 4rem;
+  background-image: linear-gradient(to top right, $primary-color, $white-color);
+
+  &__paragraph {
+    text-align: center;
+  }
+}

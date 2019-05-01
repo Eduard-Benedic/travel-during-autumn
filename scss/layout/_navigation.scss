@@ -1,0 +1,87 @@
+.nav {
+  transition: all 0.6s ease-out;
+
+  font-size: 3rem;
+  color: white;
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
+  opacity: 1;
+  background-image: linear-gradient(
+    to right,
+    rgba($primary-color, 0.6),
+    rgba($secondary-color, 0.6)
+  );
+
+  @include respond(atSmall) {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  &__content {
+    width: 100%;
+  }
+  &__menu {
+    list-style: none;
+    float: left;
+    width: 66.66%;
+    text-align: right;
+    @include respond(atMedium) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__item {
+    text-decoration: none;
+    color: $white-color;
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    display: inline-block;
+    @include respond(atMedium) {
+      font-size: 2rem;
+      width: 100%;
+    }
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  &__anchor {
+    &:link,
+    &:visited {
+      color: $white-color;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    &:hover {
+      color: $primary-color;
+      font-weight: 700;
+    }
+    &:last-child {
+      margin-right: 2rem;
+    }
+  }
+
+  &__branding {
+    color: $white-color;
+    text-decoration: none;
+    font-size: 3rem;
+    float: left;
+    text-align: left;
+    width: 33.33%;
+    @include respond(atMedium) {
+      display: none;
+      visibility: hidden;
+    }
+    &__img {
+      height: 8rem;
+      margin-left: 2rem;
+      width: 8rem;
+      border-radius: 50%;
+    }
+  }
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+}

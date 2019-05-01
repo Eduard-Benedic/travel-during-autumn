@@ -1,0 +1,52 @@
+.feature-box {
+  opacity: 0;
+  transform: translateX(-10rem);
+  background-color: $white-color;
+  line-height: 1.2;
+  padding: 2rem;
+  text-align: center;
+  height: 30rem;
+  transition: all 1s ease-out;
+  @include respond(atMedium) {
+    line-height: 1;
+    padding: 1rem;
+    height: 26rem;
+  }
+  @include respond(atSmall) {
+    height: 16rem;
+  }
+
+  &__icon {
+    font-size: 4rem;
+    display: inline-block;
+    @include respond(atMedium) {
+      font-size: 2.6rem;
+    }
+
+    @include backgroundToText;
+  }
+
+  &__text {
+    font-size: $default-font-size;
+
+    @include respond(atMedium) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    transform: translateX(0);
+
+    &:hover {
+      transform: translateY(-1rem) scale(1.1);
+      cursor: default;
+    }
+  }
+}
+
+// @for $x from 1 through 4 {
+//   .feature-box:nth-child(#{$x}) {
+//     transition-delay: $x * 0.1s;
+//   }
+// }

@@ -1,0 +1,85 @@
+.section-intro {
+  padding: 20rem;
+  margin-top: -10rem;
+  @include respond(atLarge) {
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+}
+
+.section-features {
+  padding: 17rem;
+  margin-top: -3rem;
+  background-image: url(../img/tree.jpg);
+  transform: skewY(-5deg);
+  background-size: cover;
+  border: 0.5rem solid $secondary-color;
+
+  @include respond(atLarge) {
+    padding: 3rem;
+    margin-top: 6rem;
+  }
+
+  & > * {
+    transform: skewY(5deg);
+  }
+}
+
+.section-tours {
+  padding: 15rem;
+  @include respond(atLarge) {
+    padding: 3rem;
+    margin-top: 7rem;
+  }
+}
+
+.section-testimonials {
+  padding: 3rem 0;
+  border: 0.4rem solid $secondary-color;
+  position: relative;
+  @include respond(atMedium) {
+    padding: 1rem;
+    margin-top: 6rem;
+  }
+}
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right, $primary-color, $secondary-color);
+  @include respond(atMedium) {
+    padding: 2rem;
+    margin-top: 7rem;
+  }
+}
+
+.book {
+  background-image: linear-gradient(
+      105deg,
+      rgba($white-color, 0.6) 0%,
+      white 50%,
+      transparent 50%
+    ),
+    url(../img/img-back.jpg);
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($black-color, 0.4);
+  height: 50rem;
+  @include respond(atSmall) {
+    background-image: linear-gradient(
+        105deg,
+        rgba($white-color, 0.6) 0%,
+        white 85%,
+        transparent 85%
+      ),
+      url(../img/img-back.jpg);
+    background-size: cover;
+  }
+
+  &__form {
+    width: 50%;
+    padding: 2rem;
+    @include respond(atSmall) {
+      width: 100%;
+    }
+  }
+}

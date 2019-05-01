@@ -1,0 +1,40 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.heading-primary {
+  // SHould work on it
+}
+
+.heading-secondary {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 350;
+  transition: transform 0.4s;
+
+  @include backgroundToText;
+  @include respond(atMedium) {
+    font-size: 2.6rem;
+  }
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+}
+
+.heading-tertiary {
+  font-size: 2.5rem;
+  font-weight: 300;
+
+  @include respond(atMedium) {
+    font-size: 1.7rem;
+  }
+}
+
+.paragraph {
+  font-size: $default-font-size;
+  font-weight: 300;
+  text-align: justify;
+}

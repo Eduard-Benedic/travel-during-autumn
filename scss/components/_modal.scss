@@ -10,6 +10,10 @@
   visibility: hidden;
   transition: all 0.4s ease-out;
 
+  @include respond(atMedium) {
+    display: block;
+  }
+
   &__content {
     @include contentCenter;
     position: absolute;
@@ -19,11 +23,19 @@
     border-radius: 3px;
     display: table;
     overflow: hidden;
+    @include respond(atMedium) {
+      display: block;
+    }
   }
 
   &__left {
     width: 33.33%;
     display: table-cell;
+    vertical-align: middle;
+    @include respond(atMedium) {
+      width: 100%;
+      display: block;
+    }
   }
 
   &__right {
@@ -31,6 +43,17 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+    position: relative;
+
+    @include respond(atMedium) {
+      width: 100%;
+      display: block;
+      padding: 1rem 1.5rem;
+    }
+
+    & .btn {
+      bottom: 0.4rem;
+    }
   }
 
   &__img {
@@ -45,6 +68,10 @@
     column-gap: 4rem;
     hyphens: auto;
     column-rule: 1px solid rgba($primary-color, 0.6);
+    @include respond(atMedium) {
+      font-size: 1.4rem;
+      column-count: 1;
+    }
   }
 
   &:target {

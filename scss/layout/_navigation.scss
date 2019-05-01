@@ -1,6 +1,5 @@
 .nav {
   transition: all 0.6s ease-out;
-
   font-size: 3rem;
   color: white;
   position: fixed;
@@ -25,6 +24,10 @@
     float: left;
     width: 66.66%;
     text-align: right;
+    @include respond(atSmall) {
+      width: 100%;
+      text-align: center;
+    }
     @include respond(atMedium) {
       width: 100%;
       text-align: center;
@@ -37,7 +40,7 @@
     text-transform: uppercase;
     font-size: 2.4rem;
     display: inline-block;
-    @include respond(atMedium) {
+    @include respond(atSmall) {
       font-size: 2rem;
       width: 100%;
     }

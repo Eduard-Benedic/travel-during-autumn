@@ -6,6 +6,9 @@
   "homepage": "https://github.com/Eduard-Benedic/travel-during-autumn.git",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "compile-sass": "node-sass scss/main.scss -o dist/css/style.comp.css --recursive",
+    "concat-sass": "concat -o dist/css/style.concat.css dist/css/icon-font.css dist/css/style.comp.css/main.css",
+    "prefixer-sass": "postcss --use autoprefixer -b 'last 5 versions' dist/css/style.concat.css -o dist/css/wjat.css",
     "deploy": "gh-pages -d dist"
   },
   "author": "Eduard Benedic",
@@ -13,5 +16,10 @@
   "dependencies": {
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "concat": "^1.0.3",
+    "postcss-cli": "^6.1.2"
   }
 }

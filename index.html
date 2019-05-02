@@ -429,7 +429,13 @@
     <div class="modal" id="modal">
       <div class="modal__content">
         <div class="modal__left">
-          <img src="img/img1-rez.jpg" class="modal__img" alt="pic" />
+          <img
+            srcset="img/img1-small.jpg 400px, img/img1-large.jpg 1000px"
+            alt="pic"
+            sizes="(max-width: 900px) 74vw, (max-width: 600px) 75vw, 340px"
+            class="modal__img"
+            src="img/img1-large.jpg"
+          />
         </div>
         <div class="modal__right">
           <a href="#tours" class="modal__close">&times;</a>

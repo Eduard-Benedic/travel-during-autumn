@@ -252,6 +252,9 @@ body {
       background-image: url(../img/cards-img/card2.jpg); }
     .card__photo--3 {
       background-image: url(../img/cards-img/card3.jpg); }
+    @media (max-width: 600px) and (orientation: portrait) {
+      .card__photo {
+        height: 12rem; } }
   .card__heading {
     font-size: 3rem;
     font-weight: 300;

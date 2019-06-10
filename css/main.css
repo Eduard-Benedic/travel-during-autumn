@@ -216,6 +216,7 @@ body {
     color: white;
     font-size: 5rem;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     perspective: 150rem;
     transition: all 1s;
     box-shadow: 0.4rem 0.6rem 2rem #000; }
